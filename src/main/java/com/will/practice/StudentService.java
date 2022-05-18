@@ -16,8 +16,8 @@ public class StudentService {
         this.studentRepository = studentRepository;
     }
 
-    public String getStudent(){
-        return "this the student foreal this time!";
+    public List<Student> getStudent(){
+        return studentRepository.findAll();
     }
 
     public void postStudents(Student student){

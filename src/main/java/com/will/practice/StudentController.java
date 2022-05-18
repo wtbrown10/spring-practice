@@ -3,6 +3,8 @@ package com.will.practice;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping(path = "student")
 public class StudentController {
@@ -15,7 +17,7 @@ public class StudentController {
     }
 
     @GetMapping
-    public String getStudent(){
+    public List<Student> getStudent(){
         return studentService.getStudent();
     }
 
@@ -25,9 +27,9 @@ public class StudentController {
         System.out.println(student.getId() + " " + student);
     }
 
-    @DeleteMapping
-    public void deleteStudent(){
-        studentService.
+    @DeleteMapping(path = "{studentId}")
+    public void deleteStudent(@PathVariable("studentId") Long studentId){
+        studentService.deleteStudent(studentId);
     }
 
     @PutMapping
