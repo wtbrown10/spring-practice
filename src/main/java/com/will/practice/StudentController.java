@@ -26,8 +26,8 @@ public class StudentController {
     }
 
     @DeleteMapping
-    public String deleteStudent(){
-        return "Student deleted";
+    public void deleteStudent(){
+        studentService.
     }
 
     @PutMapping
