@@ -20,8 +20,9 @@ public class StudentController {
     }
 
     @PostMapping
-    public String postStudent(){
-        return "student added";
+    public void addNewStudent(@RequestBody Student student){
+        studentService.postStudents(student);
+        System.out.println(student.getId() + " " + student);
     }
 
     @DeleteMapping
